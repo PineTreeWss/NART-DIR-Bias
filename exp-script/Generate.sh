@@ -1,4 +1,3 @@
-
 data_dir="../../data-bin/wmt16-de-en-original-skd-preprocessed"
 average_checkpoint_path=../../checkpoints/wmt16-de-en-bi-skd-P0-Upp8/checkpoint_bi_avg.pt
 
