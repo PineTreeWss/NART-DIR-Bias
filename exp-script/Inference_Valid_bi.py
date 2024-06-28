@@ -1,9 +1,3 @@
-#Author: SongSheng Wang
-#Date: 2022-08-18
-#Inference the checkpoints on the target folds on validation set, calculate the corresponding validation set BLEU.
-#1. Analyze the validation set BLEU result and draw the line chart
-#2. Report the best five checkpoints.
-
 import sys
 import os
 from matplotlib import pyplot as plt
@@ -54,12 +48,6 @@ def AnalyzeResult(BLEU_List,figure_name):
     best_five_epoch = []
     for item in best_five_items:
         best_five_epoch.append(item[0])
-    '''plt.ylabel('Valid Bleu')
-    plt.xlabel('epoch')
-    plt.title('NAT Training Procedure')
-    plt.plot(epoch_num_set, valid_loss_set)
-    plt.scatter(best_epoch, best_bleu, marker='o', color='red', s=10, label='First')
-    plt.savefig(figure_name)'''
     return best_five_epoch
 def getkey(item):
     return item[1]
