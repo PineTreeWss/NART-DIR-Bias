@@ -1,5 +1,5 @@
-input_dir=""       # directory of raw text data
-data_dir=$PREPROCESSED_DIR$   # directory of the generated binarized data
+input_dir="DATA_DIR"       # directory of raw text data
+data_dir="PREPROCESSED_DIR"   # directory of the generated binarized data
 src=de                            # source language id
 tgt=en                            # target language id
 fairseq-preprocess --source-lang ${src} --target-lang ${tgt} \
