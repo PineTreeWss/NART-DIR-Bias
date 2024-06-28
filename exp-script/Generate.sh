@@ -1,11 +1,4 @@
-#!/bin/bash
-#SBATCH --job-name          DT-Hybrid
-#SBATCH --time              48:00:00
-#SBATCH --cpus-per-task     32
-#SBATCH --gres              gpu:1
-#SBATCH --mem               64G
-#SBATCH --output            DA-T-Ro-En.%j.out
-#SBATCH --partition         a100_batch
+
 data_dir="../../data-bin/wmt16-de-en-original-skd-preprocessed"
 average_checkpoint_path=../../checkpoints/wmt16-de-en-bi-skd-P0-Upp8/checkpoint_bi_avg.pt
 
