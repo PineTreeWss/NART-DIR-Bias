@@ -130,7 +130,20 @@ BC-Transformer provides the Bidirectional Ensemble Searching, in which the beam-
 The BES contains  parameters:
 
 * Decode_beamsize:  Beam size of one directional partitions. The total beam size is 2 * Decode_beamsize. 
-* decode_direction: Contains three selections, the 'forward' and 'backward' and 'bidirection'. The 'forward' and 'backward' performs a L2R and R2L directional Beam Search on BC Graph, while the 'bidirection' performs the BES on BC-Graph. 
+* decode_direction: Contains three selections, the 'forward' and 'backward' and 'bidirection'. The 'forward' and 'backward' performs a L2R and R2L directional Beam Search on BC Graph, while the 'bidirection' performs the BES on BC-Graph.
+```bash
+fairseq-generate  ${data_dir} \
+    --gen-subset test --user-dir fs_plugins --task translation_lev_modified \
+    --iter-decode-max-iter 0 --iter-decode-eos-penalty 0 --beam 1 \
+    --remove-bpe --batch-size 16 --seed 0 --skip-invalid-size-inputs-valid-test\
+    --model-overrides "{\"decode_strategy\": \"beamsearch\", \"decode_beta\": 1.1, \
+        \"argmax_token_num\":5, \
+        \"decode_alpha\": 1.4, \"decode_gamma\": 0, \
+        \"decode_lm_path\": None, \
+        \"decode_beamsize\": 200, \"decode_top_cand_n\": 5, \"decode_top_p\": 0.9, \
+        \"decode_max_beam_per_length\": 10, \"decode_max_batchsize\": 32,  \"decode_dedup\": True, \"decode_direction\": \"bidirection\" }" \
+    --path ${average_checkpoint_path} > Generate.Beam.Bidir.1.4.out
+```
 
 ### Average Checkpoints
 
