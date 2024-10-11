@@ -1,6 +1,6 @@
 # NART-AR-Bias
 
-Implementation for the EMNLP2024 paper "**Imitation Game is Not Optimal: Alleviating Autoregressive Bias in
+Implementation for the paper "**Imitation Game is Not Optimal: Alleviating Autoregressive Bias in
 Non-Autoregressive Transformers**".
 
 **Abstract**: Non-autoregressive Transformer (NART) models predict tokens independently, which presents challenges in capturing token dependencies. Previous approaches have incorporated the Autoregressive~(AR) token dependency into the NART models, leading to a discrepancy known as AR exposure bias during the training and decoding processes of NART models, adversely affecting generation quality. We propose two novel approaches that facilitate the recovery of future context information, thereby mitigating AR exposure bias. First, **Bidirectional Contextual Knowledge Distillation (BCKD)** leverages AR teacher models to distill bidirectional token correlation information, enhancing via data augmentation. Second, the **Bidirectional Contextual Transformer (BC-Transformer)** captures global contextual information through its innovative graph architecture. Experiments demonstrate that our BC-Transformer achieves translation quality comparable to that of the Autoregressive Transformer (ART) while maintaining the superior generation speed of the DA-Transformer. When both proposed methods are incorporated, NART models significantly outperform ART models (p<0.03). Further analysis reveals that the BC-Transformer surpasses AR baseline models in the translation of long sentences.
