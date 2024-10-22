@@ -10,11 +10,11 @@ Non-autoregressive Transformer (NART) models predict tokens independently, which
 #### Proposed Methods
 * The BC-Transformrer extends the DA-Transformer in a bidirectional architecture.
 
-![](https://github.com/PineTreeWss/NART-AR-Bias/tree/main/Assets/BCArchitecture.jpg)
+![](https://github.com/PineTreeWss/NART-AR-Bias/blob/main/Assets/BCArchitecture.jpg)
 
 * The BCKD uses two symmetrical Autoregressive Transformers as the teacher model to generate the KD dataset.
 
-![](https://github.com/PineTreeWss/NART-AR-Bias/tree/main/AssetsBCKD2.0.png)
+![](https://github.com/PineTreeWss/NART-AR-Bias/blob/main/Assets/BCKD2.0.png)
 
 #### Practical Advantages 
 * BCKD further boosts a wide group of NART models (CMLM/GLAT/BC-T) than original KD methodology.
