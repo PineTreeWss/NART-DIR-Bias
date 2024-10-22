@@ -6,8 +6,8 @@ Non-Autoregressive Transformers**".
 **Abstract**: Non-autoregressive Transformer (NART) models predict tokens independently, which presents challenges in capturing token dependencies. Previous approaches have incorporated the Autoregressive~(AR) token dependency into the NART models, leading to a discrepancy known as AR exposure bias during the training and decoding processes of NART models, adversely affecting generation quality. We propose two novel approaches that facilitate the recovery of future context information, thereby mitigating AR exposure bias. First, **Bidirectional Contextual Knowledge Distillation (BCKD)** leverages AR teacher models to distill bidirectional token correlation information, enhancing via data augmentation. Second, the **Bidirectional Contextual Transformer (BC-Transformer)** captures global contextual information through its innovative graph architecture. Experiments demonstrate that our BC-Transformer achieves translation quality comparable to that of the Autoregressive Transformer (ART) while maintaining the superior generation speed of the DA-Transformer. When both proposed methods are incorporated, NART models significantly outperform ART models (p<0.03). Further analysis reveals that the BC-Transformer surpasses AR baseline models in the translation of long sentences.
 
 **Proposed Methods**: 
-- The BC-Transformrer extends the DA-Transformer in a bidirectional architecture.<img src=BC-Arch.jpg width="1200px">
-- The BCKD uses two symmetrical Autoregressive Transformers as the teacher model to generate the KD dataset.<div align=center><img src=BCKD-2.0.png width="500px"><div align=left>
+* The BC-Transformrer extends the DA-Transformer in a bidirectional architecture.<img src=BC-Arch.jpg width="1200px">
+* The BCKD uses two symmetrical Autoregressive Transformers as the teacher model to generate the KD dataset.<div align=center><img src=BCKD-2.0.png width="500px"><div align=left>
 
 **Practical Advantages**: 
 * BCKD further boosts a wide group of NART models (CMLM/GLAT/BC-T) than original KD methodology.
@@ -16,16 +16,16 @@ Non-Autoregressive Transformers**".
 * Both methods (BCKD & BC-Transformer) preserve the generation speedup of the NART models.
 
 ## **BCKD Datasets**
-- We release the BCKD dataset of WMT14 En-De/De-En, WMT16 En-Ro/Ro-En.
-- Refer to the following link for BCKD data downloading:
+* We release the BCKD dataset of WMT14 En-De/De-En, WMT16 En-Ro/Ro-En.
+* Refer to the following link for BCKD data downloading:
    https://drive.google.com/drive/folders/1z3aw0ZiFTmpTWP8cc4mgnRcKCVKvQhdz?usp=sharing
 ## **BC-Transformer Codes**
 This repo is modified from [``DA-Transformer/v1.0``](https://github.com/thu-coai/DA-Transformer/tree/v1.0), please see the original documentation for more information.
 
 **Features**:
 
-- We extend the original DA-Transformer model with a bidirectional training loss. 
-- We extend the original L2R directional beam search to the bidirectional ensemble search (BES). 
+* We extend the original DA-Transformer model with a bidirectional training loss. 
+* We extend the original L2R directional beam search to the bidirectional ensemble search (BES). 
 
 ## Requirements & Installation
 
@@ -38,7 +38,7 @@ This repo is modified from [``DA-Transformer/v1.0``](https://github.com/thu-coai
 ## Main Files
 
 Most codes of the framework are from Fairseq. We mainly add the following files.
-- exp-scripts contains the scripts of preprocess/training/evaluation/generation of WMT14 De-En Dataset.
+* exp-scripts contains the scripts of preprocess/training/evaluation/generation of WMT14 De-En Dataset.
 ### fs_plugins
 
 ```
