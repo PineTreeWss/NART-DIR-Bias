@@ -15,11 +15,11 @@ Furthermore, BCKD enhances the generation quality of a diverse spectrum of NART 
 #### Proposed Methods
 * The BC-Transformrer extends the DA-Transformer in a bidirectional architecture.
 
-![](https://github.com/PineTreeWss/NART-AR-Bias/blob/main/Assets/BCArchitecture.jpg)
+![](Assets/BCArchitecture.jpg)
 
 * The BCKD uses two symmetrical Autoregressive Transformers as the teacher model to generate the KD dataset.
 
-![](https://github.com/PineTreeWss/NART-AR-Bias/blob/main/Assets/BCKD2.0.png)
+![](Assets/BCKD2.0.png)
 
 #### Practical Advantages 
 * BCKD further boosts a wide group of NART models (CMLM/GLAT/BC-T) than original KD methodology.
