@@ -1,11 +1,16 @@
 # NART-AR-Bias
 
-Implementation for the paper "**Imitation Game is Not Optimal: Alleviating Autoregressive Bias in
-Non-Autoregressive Transformers**".
+Implementation for the paper "**Alleviating Directional Bias in Non-Autoregressive Transformers**".
 ## Background
 #### Abstract 
 
-Non-autoregressive Transformer (NART) models predict tokens independently, which presents challenges in capturing token dependencies. Previous approaches have incorporated the Autoregressive~(AR) token dependency into the NART models, leading to a discrepancy known as AR exposure bias during the training and decoding processes of NART models, adversely affecting generation quality. We propose two novel approaches that facilitate the recovery of future context information, thereby mitigating AR exposure bias. First, **Bidirectional Contextual Knowledge Distillation (BCKD)** leverages AR teacher models to distill bidirectional token correlation information, enhancing via data augmentation. Second, the **Bidirectional Contextual Transformer (BC-Transformer)** captures global contextual information through its innovative graph architecture. Experiments demonstrate that our BC-Transformer achieves translation quality comparable to that of the Autoregressive Transformer (ART) while maintaining the superior generation speed of the DA-Transformer. When both proposed methods are incorporated, NART models significantly outperform ART models (p<0.03). Further analysis reveals that the BC-Transformer surpasses AR baseline models in the translation of long sentences.
+Non-Autoregressive Transformer (NART) has emerged as a promising approach for fast neural machine translation due to its independent and parallel nature during inference. 
+Early works have improved NART by integrating directional token dependency information. 
+However, the outcome of NART is still unsatisfactory against those of the Autoregressive Transformer (ART) models. One of the contributions of this paper is the observation of \textit{Directional Bias}, the propagation of exposure bias into NAR models through the directional token dependency adopted, which leads to low transition quality and should be minimized.
+In light of this, this paper incorporates future context information into both Conventional Knowledge Distillation (CKD) and Directed Acyclic Transformer (DA-T) frameworks, whereby proposes Bidirectional Contextual Knowledge Distillation (BCKD) and Bidirectional Contextual Transformer (BC-T): 
+BCKD employs dual AR teacher models with opposite inference directions (L2R/R2L) to reduce Directional Bias in CKD datasets, while BC-T replaces the directed acyclic graph of DA-T with a bidirectional graph, which captures bidirectional token dependency information, and performs translation via bidirectional ensemble search. 
+Experimental results reveal that BC-T achieves comparative translation quality against ART models while preserving the high generation efficiency, inherent to DA-T.
+Furthermore, BCKD enhances the generation quality of a diverse spectrum of NART models, including GLAT and CMLM. More intriguingly, the BC-T model equipped with BCKD exhibits superior performance compared to ART models, achieving an improvement of 0.97 BLEU points. 
 
 #### Proposed Methods
 * The BC-Transformrer extends the DA-Transformer in a bidirectional architecture.
@@ -25,7 +30,7 @@ Non-autoregressive Transformer (NART) models predict tokens independently, which
 #### **BCKD Datasets**
 * We release the BCKD dataset of WMT14 En-De/De-En, WMT16 En-Ro/Ro-En.
 * Refer to the following link for BCKD data downloading:
-   https://drive.google.com/drive/folders/1z3aw0ZiFTmpTWP8cc4mgnRcKCVKvQhdz?usp=sharing
+   [https://drive.google.com/drive/folders/1z3aw0ZiFTmpTWP8cc4mgnRcKCVKvQhdz?usp=sharing](https://drive.google.com/drive/folders/1foHdMQID-BewDAXNOKIj2Q4z3SlcRQLJ?usp=drive_link)
 #### **BC-Transformer Codes**
 This repo is modified from [``DA-Transformer/v1.0``](https://github.com/thu-coai/DA-Transformer/tree/v1.0), please see the original documentation for more information.
 
