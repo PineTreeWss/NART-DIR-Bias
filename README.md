@@ -1,4 +1,4 @@
-# NART-AR-Bias
+# NART-DIR-Bias
 
 Implementation for the paper "**Alleviating Directional Bias in Non-Autoregressive Transformers**".
 ## Background
@@ -142,7 +142,7 @@ to enable the pytorch implementation.
 #### Inference
 
 BC-Transformer provides the Bidirectional Ensemble Searching, in which the beam-search candidate list is partitioned into two identical segments to accommodate two sets of candidates, with the most probable one selected as the model output.
-The BES contains  parameters:
+The BES contains parameters:
 
 * **decode_beamsize**:  Beam size of one directional partitions. The total beam size is `2 * decode_beamsize`. 
 * **decode_direction**: Contains three selections, the `'forward'` and `'backward`' and `'bidirection'`. The `'forward'` and `'backward'` performs a L2R and R2L directional Beam Search on BC Graph, while the `'bidirection'` performs the BES on BC-Graph.
