@@ -45,7 +45,7 @@ This repo is modified from [``DA-Transformer/v1.0``](https://github.com/thu-coai
 * Python >= 3.7
 * Pytorch == 1.12.1 (tested with cuda ==  11.3)
 * gcc >= 7.0.0 (for compiling cuda operations. See FAQs if you want to use a lower gcc version)
-* ``git clone --recurse-submodules https://github.com/PineTreeWss/NART-AR-Bias.git && pip install -e .``
+* ``git clone && pip install -e .``
 * BeamSearch algorithm for BC-Transformer (``cd dag_search && bash install.sh``)
 
 ## Main Files
