@@ -1,6 +1,6 @@
 # NART-DIR-Bias
 
-Implementation for the paper "**Alleviating Directional Bias in Non-Autoregressive Transformers**".
+Implementation for the paper "**Alleviating Directional Bias in Non-Autoregressive Transformers**" (IJCNN 2025).
 ## Background
 #### Abstract 
 
