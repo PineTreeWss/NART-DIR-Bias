@@ -173,3 +173,16 @@ Please install dag_search first, see ``./dag_search/install.sh`` for requirement
 ## Citing
 
 Please kindly cite us if you find our papers or codes useful.
+```
+@INPROCEEDINGS{11228036,
+  author={Songsheng, Wang and Yu, Wan and Derek F. Wong and Shijie, Zhang and Yuchu, Lin and  Lidia S. Chao},
+  booktitle={2025 International Joint Conference on Neural Networks (IJCNN)}, 
+  title={Alleviating Directional Bias in Non-Autoregressive Transformers}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={Translation;Trees (botanical);Subspace constraints;Neural networks;Neural machine translation;Transformers;Search problems;Chronic kidney disease;Parallel algorithms;Context modeling;Machine Translation;Natural Language Processing;Parallel algorithms;Graph and tree search strategies},
+  doi={10.1109/IJCNN64981.2025.11228036}}
+```
+
